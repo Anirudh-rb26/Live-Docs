@@ -6,6 +6,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+interface UserTypeSelectorParams {
+  userType: UserType;
+  setUserType: (type: UserType) => void;
+  onClickHandler?: (type: UserType) => void;
+}
+
+type UserType = "viewer" | "editor";
+
 const UserTypeSelector = ({
   userType,
   setUserType,

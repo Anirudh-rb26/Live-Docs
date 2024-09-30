@@ -1,22 +1,23 @@
 "use client";
 
-import Loader from "@/components/loader";
 import { getClerkUsers, getDocumentUsers } from "@/lib/actions/user-actions";
 import { useUser } from "@clerk/nextjs";
 import {
   ClientSideSuspense,
   LiveblocksProvider,
-  RoomProvider,
-} from "@liveblocks/react";
-import React, { ReactNode } from "react";
+} from "@liveblocks/react/suspense";
+import { Loader } from "lucide-react";
+import { ReactNode } from "react";
 
 const Provider = ({ children }: { children: ReactNode }) => {
   const { user: clerkUser } = useUser();
+
   return (
     <LiveblocksProvider
       authEndpoint="/api/liveblocks-auth"
       resolveUsers={async ({ userIds }) => {
         const users = await getClerkUsers({ userIds });
+
         return users;
       }}
       resolveMentionSuggestions={async ({ text, roomId }) => {
@@ -29,11 +30,7 @@ const Provider = ({ children }: { children: ReactNode }) => {
         return roomUsers;
       }}
     >
-      <RoomProvider id="my-room">
-        <ClientSideSuspense fallback={<Loader />}>
-          {children}
-        </ClientSideSuspense>
-      </RoomProvider>
+      <ClientSideSuspense fallback={<Loader />}>{children}</ClientSideSuspense>
     </LiveblocksProvider>
   );
 };

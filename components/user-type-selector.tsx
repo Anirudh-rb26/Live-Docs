@@ -1,11 +1,10 @@
-import React from "react";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "@/components/ui/select";
 
 const UserTypeSelector = ({
   userType,

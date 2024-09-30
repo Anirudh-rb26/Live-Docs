@@ -8,7 +8,7 @@ const ActiveCollaborators = () => {
 
   return (
     <ul className="collaborators-list">
-      {collaborators.map(({ id, avatar, name, color }) => (
+      {collaborators.map(({ id, avatar, color }) => (
         <li key={id}>
           <Image
             src={avatar}

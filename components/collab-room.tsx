@@ -1,7 +1,7 @@
 "use client";
 
 import { ClientSideSuspense, RoomProvider } from "@liveblocks/react";
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Loader from "./loader";
 import Header from "./header";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";

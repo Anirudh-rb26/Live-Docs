@@ -29,7 +29,8 @@ const Collaborator = ({
 
     setLoading(false);
   };
-  const removeCollaboratorHandler = async (type: string) => {
+
+  const removeCollaboratorHandler = async () => {
     setLoading(true);
 
     await removeCollaborator({
@@ -71,10 +72,7 @@ const Collaborator = ({
             setUserType={setUserType || "viewer"}
             onClickHandler={shareDocumentHandler}
           ></UserTypeSelector>
-          <Button
-            type="button"
-            onClick={() => removeCollaboratorHandler(collaborator.email)}
-          >
+          <Button type="button" onClick={() => removeCollaboratorHandler()}>
             Remove
           </Button>
         </div>

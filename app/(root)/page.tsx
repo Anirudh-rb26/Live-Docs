@@ -40,7 +40,7 @@ const HomePage = async () => {
             ></AddDocumentButton>
           </div>
           <ul className="document-ul">
-            {allDocuments.data.map(({ id, metadata, createdAt }: any) => (
+            {allDocuments.data.map(({ id, metadata, createdAt }) => (
               <li key={id} className="document-list-item">
                 <Link
                   href={`/documents/${id}`}

@@ -34,7 +34,7 @@ export const createDocument = async ({
 
     return parseStringify(room);
   } catch (error) {
-    console.log("Error: ${error}");
+    console.log(`Error: ${error}`);
   }
 };
 
@@ -146,7 +146,7 @@ export const removeCollaborator = async ({
     revalidatePath(`/document/${roomId}`);
     return parseStringify(updatedRoom);
   } catch (error) {
-    console.log(`Error: $error`);
+    console.log(`Error: ${error}`);
   }
 };
 
@@ -156,6 +156,6 @@ export const deleteDocument = async (roomId: string) => {
     revalidatePath("/");
     redirect("/");
   } catch (error) {
-    console.log(`Error: $Error`);
+    console.log(`Error: ${error}`);
   }
 };

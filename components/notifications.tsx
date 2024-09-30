@@ -55,7 +55,7 @@ export const Notifications = () => {
             )}
 
             {unreadNotifications.length > 0 &&
-              unreadNotifications.map((inboxNotification: any) => (
+              unreadNotifications.map((inboxNotification) => (
                 <InboxNotification
                   key={inboxNotification.id}
                   inboxNotification={inboxNotification}
